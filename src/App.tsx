@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import generateMessage, { Message } from './Api';
+import { ColumnsGrid } from  "./component/ColumnsGrid";
+import { MessageProvider } from "./context/MessageProvider";
 
 const App: React.FC<{}> = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -14,7 +16,9 @@ const App: React.FC<{}> = () => {
 
   return (
     <div>
-      {messages?.map?.(msg => <div key={msg?.message}>{msg?.message}</div>)}
+      <MessageProvider>
+        <ColumnsGrid />
+      </MessageProvider>
     </div>
   );
 }
