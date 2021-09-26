@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 import { TITLE, COLOR } from "../utils/constants";
 
 export interface IMessageItem {
@@ -29,4 +30,9 @@ export interface IMessagesState {
         count: number;
         messages: IMessageItem[];
     }
+}
+
+export interface IContextValue{
+    state: IMessagesState,
+    dispatch: Dispatch<IAction>;
 }

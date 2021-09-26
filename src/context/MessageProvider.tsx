@@ -1,9 +1,9 @@
-import { ReactChild, ReactFragment, ReactPortal, useReducer } from "react";
-import { initialMessagesState, TYPE } from "../utils/constants";
+import { ReactChild , useReducer} from "react";
+import { initialMessagesState, initialContextValue} from "../utils/constants";
 import { MessagesReducer } from "../utils/grid";
 import { MessageContext } from "./MessageContext";
 
-const MessageProvider = (children: ReactChild) => {
+const MessageProvider = (children: ReactChild | any) => {
 
     const [state, dispatch] = useReducer(MessagesReducer, initialMessagesState);
 

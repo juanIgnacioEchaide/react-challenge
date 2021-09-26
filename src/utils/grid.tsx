@@ -1,7 +1,5 @@
-import { IMessagesState, IAction, IMessageItem } from "../models/grid"
-import { Message } from "../Api";
+import { IMessagesState, IAction } from "../models/grid"
 import { ACTION } from "../utils/constants";
-import { Dispatch } from "react";
 
 export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
     switch(action.type){

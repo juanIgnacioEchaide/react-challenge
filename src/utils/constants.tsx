@@ -1,3 +1,5 @@
+import { IMessagesState, IContextValue } from "../models/grid";
+
 export enum COLOR {
     ERROR = "#F56236",
     WARNING = "#FCE788",
@@ -25,7 +27,7 @@ export enum TYPE {
     INFO = "INFO",
 }
 
-export const initialMessagesState = {
+export const initialMessagesState: IMessagesState = {
     errors: {
         title: TITLE.ERROR,
         color: COLOR.ERROR,
@@ -43,5 +45,10 @@ export const initialMessagesState = {
         color: COLOR.INFO,
         count: 0,
         messages: [],
-    }
+    },
+}
+
+export const initialContextValue: IContextValue = {
+    state: initialMessagesState,
+    dispatch: () => {}, 
 }
