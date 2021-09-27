@@ -36,5 +36,3 @@ export interface IContextValue{
     state: IMessagesState,
     dispatch: Dispatch<IAction>,
 }
-
-export type ContextValue = IContextValue | null

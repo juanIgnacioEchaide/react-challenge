@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Column } from "../component/Column"; 
 import {  TYPE } from "../utils/constants";
 import { UseMessages } from "../utils/useMessages";
-
 const ColumnsGrid = (): JSX.Element => {  
 
   const { state, dispatch } = UseMessages();
+
+  useEffect(()=>{
+    return console.log(state)
+  },[state])
+
 
   return (
     <Box sx={{ flexGrow: 1 }} >

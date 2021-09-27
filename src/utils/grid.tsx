@@ -13,7 +13,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
         };
         case ACTION.ADD_WARNING : return {
             ...prevState,
-            errors:{
+            warnings:{
                 ...prevState.warnings,
                 count: prevState.warnings.count += 1,
                 messages: [ ...prevState.warnings.messages, action.payload]

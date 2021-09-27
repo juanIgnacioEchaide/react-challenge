@@ -11,7 +11,6 @@ const UseMessages = (): IContextValue => {
     const { state, dispatch } = useContext(MessageContext);
 
       useEffect(() => {
-      const cleanUp = () => {
         generateMessage((message: Message) => {
           switch (message.priority) {
             case 0:
@@ -41,11 +40,10 @@ const UseMessages = (): IContextValue => {
                 },
               });
               break;
-          }
+            }
         });
-      };
-  
-      return cleanUp;
+    
+
     }, [state, dispatch]);
   
     return { state, dispatch };
