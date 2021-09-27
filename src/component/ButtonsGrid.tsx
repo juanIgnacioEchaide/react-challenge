@@ -1,8 +1,11 @@
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { PannelButton } from "./UI/elements";
 
-const ButtonsGrid = (): JSX.Element => {
+export interface IButtonsGridProps {
+    pauseFunction: VoidFunction;
+    clearFunction: VoidFunction;
+}
+const ButtonsGrid = ({pauseFunction, clearFunction }:IButtonsGridProps): JSX.Element => {
   return (
     <Box sx={{ flexGrow: 1 }} 
         style={{
@@ -10,8 +13,8 @@ const ButtonsGrid = (): JSX.Element => {
             alignItems: "center", 
             justifyContent:"center"
             }}>
-            <PannelButton>CLEAR</PannelButton>
-            <PannelButton>STOP</PannelButton>
+            <PannelButton onClick={clearFunction}>CLEAR</PannelButton>
+            <PannelButton onClick={pauseFunction}>STOP</PannelButton>
     </Box>
   );
 };

@@ -21,9 +21,11 @@ const MessagesContainer = styled.div`
 `;  
 
 const PannelButton = styled(Button)`
+    color: black;
     background: #88FCA3;
     border-radius: 10px;
     box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 2px;   
 `
 
 const MessageCard = styled.div`
@@ -31,6 +33,7 @@ const MessageCard = styled.div`
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 10px;
+    height: 70px;
     box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 const MessageText = styled.div`
@@ -40,9 +43,11 @@ const MessageText = styled.div`
     display: flex;  
 `;
 const ClearButton = styled.p`
+    position:absolute;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-right: 7px;
+    padding-bottom: 4px;
 `;
 
 export {
