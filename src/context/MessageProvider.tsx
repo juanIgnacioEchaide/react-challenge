@@ -1,14 +1,15 @@
 import { ReactChild , useReducer} from "react";
-import { initialMessagesState, initialContextValue} from "../utils/constants";
+import { initialMessagesState } from "../utils/constants";
 import { MessagesReducer } from "../utils/grid";
 import { MessageContext } from "./MessageContext";
 
 const MessageProvider = (children: ReactChild | any) => {
 
     const [state, dispatch] = useReducer(MessagesReducer, initialMessagesState);
-
+    const value = { state, dispatch }
+    
     return (
-      <MessageContext.Provider value={state}>
+      <MessageContext.Provider value={value}>
         {children}
       </MessageContext.Provider>
     );

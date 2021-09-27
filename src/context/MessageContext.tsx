@@ -1,6 +1,7 @@
 import { createContext } from "react";
-import { initialMessagesState  } from "../utils/constants";
+import { IContextValue } from "../models/grid";
+import { initialContextValue } from "../utils/constants";
 
-const MessageContext = createContext(initialMessagesState);
+const MessageContext = createContext<IContextValue>(initialContextValue);
 
 export { MessageContext };

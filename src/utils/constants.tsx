@@ -45,7 +45,7 @@ export const initialMessagesState: IMessagesState = {
         color: COLOR.INFO,
         count: 0,
         messages: [],
-    },
+    }
 }
 
 export const initialContextValue: IContextValue = {

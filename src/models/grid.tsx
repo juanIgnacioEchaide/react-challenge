@@ -29,10 +29,12 @@ export interface IMessagesState {
         color: COLOR;
         count: number;
         messages: IMessageItem[];
-    }
+    }   
 }
 
 export interface IContextValue{
     state: IMessagesState,
-    dispatch: Dispatch<IAction>;
+    dispatch: Dispatch<IAction>,
 }
+
+export type ContextValue = IContextValue | null

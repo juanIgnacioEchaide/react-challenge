@@ -1,13 +1,16 @@
 
-import { useReducer, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import generateMessage, { Message } from "../Api";
 import { uuid } from "../utils/grid";
+import { MessageContext } from "../context/MessageContext";
+import { ACTION } from "./constants";
+import { IContextValue } from "../models/grid";
 
-const UseMessages = (): JSX.Element => {
+const UseMessages = (): IContextValue => {
 
-    const context = useContext(contextValue)
-  
-    useEffect(() => {
+    const { state, dispatch } = useContext(MessageContext);
+
+      useEffect(() => {
       const cleanUp = () => {
         generateMessage((message: Message) => {
           switch (message.priority) {
@@ -43,9 +46,9 @@ const UseMessages = (): JSX.Element => {
       };
   
       return cleanUp;
-    }, [state]);
+    }, [state, dispatch]);
   
-    return { state };
+    return { state, dispatch };
   };
 
   export { UseMessages }
