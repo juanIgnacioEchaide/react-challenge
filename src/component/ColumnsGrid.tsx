@@ -1,12 +1,13 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Column } from "../component/Column"; 
-import { initialMessagesState, TYPE } from "../utils/constants";
-import { MessagesReducer } from "../utils/grid";
+import {  TYPE } from "../utils/constants";
+import { MessageContext } from "../context/MessageContext";
 
 const ColumnsGrid = (): JSX.Element => {  
-  const [state, dispatch] = useReducer(MessagesReducer, initialMessagesState);
+  const { state, dispatch } = useContext(MessageContext);
+
 
   return (
     <Box sx={{ flexGrow: 1 }} >

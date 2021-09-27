@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import generateMessage, { Message } from './Api';
+import React from 'react';
 import { ColumnsGrid } from  "./component/ColumnsGrid";
 import { MessageProvider } from "./context/MessageProvider";
+import { UseMessages } from "./utils/useMessages";
 
 const App: React.FC<{}> = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
 
-  useEffect(() => {
-    const cleanUp = generateMessage((message: Message) => {
-      setMessages(oldMessages => [...oldMessages, message]);
-    });
-    return cleanUp;
-  }, [setMessages]);
+  UseMessages();
 
   return (
     <div>
