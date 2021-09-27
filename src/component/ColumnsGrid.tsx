@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Column } from "../component/Column"; 
 import {  TYPE } from "../utils/constants";
-import { MessageContext } from "../context/MessageContext";
+import { UseMessages } from "../utils/useMessages";
 
 const ColumnsGrid = (): JSX.Element => {  
-  const { state, dispatch } = useContext(MessageContext);
 
+  const { state, dispatch } = UseMessages();
 
   return (
     <Box sx={{ flexGrow: 1 }} >
