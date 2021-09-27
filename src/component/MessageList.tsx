@@ -36,7 +36,7 @@ const MessagesList = ({ type, messages, color, dispatch }: IMessagesListProps): 
         <MessageCard key ={mssg.id} color={color}>
           <MessageText>{mssg.message}</MessageText>
           <ClearButton
-            onClick={() => onDispatch(mssg.id, type)}
+            onClick={() => console.log("gil")}
             >
                 Clear
             </ClearButton>

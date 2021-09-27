@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Column } from "../component/Column"; 
 import {  TYPE } from "../utils/constants";
 import { UseMessages } from "../utils/useMessages";
+
 const ColumnsGrid = (): JSX.Element => {  
 
   const { state, dispatch } = UseMessages();
@@ -12,13 +13,12 @@ const ColumnsGrid = (): JSX.Element => {
     return console.log(state)
   },[state])
 
-
   return (
-    <Box sx={{ flexGrow: 1 }} >
+    <Box sx={{ flexGrow: 0 }} >
       <Grid container spacing={2} 
         style={{
           display:"flex",
-          alignItems: "center", 
+          alignItems:"flex-start",
           justifyContent:"center"
           }}>
         <Grid item md={3}>
