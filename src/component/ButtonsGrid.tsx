@@ -20,7 +20,6 @@ const ButtonsGrid = (): JSX.Element => {
     >
       <PannelButton
         onClick={() => {
-          console.log(state)
           dispatch({ type: ACTION.STOP });
         }}
       >
@@ -28,7 +27,6 @@ const ButtonsGrid = (): JSX.Element => {
       </PannelButton>
       <PannelButton
         onClick={() => {
-          console.log(state)
           dispatch({ type: ACTION.CLEAR });
         }}
       >
