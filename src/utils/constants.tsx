@@ -19,6 +19,8 @@ export enum ACTION {
     DELETE_ERROR = "DELETE_ERROR",
     DELETE_WARNING = "DELETE_WARNING",
     DELETE_INFO = "DELETE_INFO",
+    STOP = "STOP",
+    CLEAR = "CLEAR",
 }
 
 export enum TYPE {
@@ -45,7 +47,8 @@ export const initialMessagesState: IMessagesState = {
         color: COLOR.INFO,
         count: 0,
         messages: [],
-    }
+    },
+    stop: false,
 }
 
 export const initialContextValue: IContextValue = {

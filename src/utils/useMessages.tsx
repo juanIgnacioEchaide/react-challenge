@@ -11,6 +11,8 @@ const UseMessages = (): IContextValue => {
     const { state, dispatch } = useContext(MessageContext);
 
       useEffect(() => {
+        console.log(state)
+        !state.stop &&
         generateMessage((message: Message) => {
           switch (message.priority) {
             case 0:
@@ -44,7 +46,8 @@ const UseMessages = (): IContextValue => {
         });
     
 
-    }, [state, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
   
     return { state, dispatch };
   };

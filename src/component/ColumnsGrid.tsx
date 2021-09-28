@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Column } from "../component/Column"; 
@@ -8,10 +8,6 @@ import { UseMessages } from "../utils/useMessages";
 const ColumnsGrid = (): JSX.Element => {  
 
   const { state, dispatch } = UseMessages();
-
-  useEffect(()=>{
-    return console.log(state)
-  },[state])
 
   return (
     <Box sx={{ flexGrow: 0 }} >

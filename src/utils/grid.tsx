@@ -1,7 +1,8 @@
 import { IMessagesState, IAction } from "../models/grid"
-import { ACTION } from "../utils/constants";
+import { ACTION, initialMessagesState } from "../utils/constants";
 
 export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
+
     switch(action.type){
         case ACTION.ADD_ERROR : return {
             ...prevState,
@@ -32,30 +33,23 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
             errors:{
                 ...prevState.errors,
                 count: prevState.errors.count - 1,
-                messages: [ ...prevState.errors.messages.splice(
-                    prevState.errors.messages.indexOf(action.payload)
-                    )]
+                messages: [...prevState.errors.messages.filter(m => m.id !== action.payload)]
             }
         };
         case ACTION.DELETE_WARNING : return {
             ...prevState,
             warnings:{
-                ...prevState.errors,
-                count: prevState.errors.count - 1,
-                messages: [ ...prevState.warnings.messages.splice(
-                    prevState.errors.messages.indexOf(action.payload)
-                    )]
+                ...prevState.warnings,
+                count: prevState.warnings.count - 1,
+                messages: [...prevState.warnings.messages.filter(m => m.id !== action.payload)]
             }
         };
-        case ACTION.DELETE_INFO : return {
+        case ACTION.CLEAR : return {
+            ...initialMessagesState
+        };
+        case ACTION.STOP : return {
             ...prevState,
-            info:{
-                ...prevState.errors,
-                count: prevState.errors.count - 1,
-                messages: [ ...prevState.info.messages.splice(
-                    prevState.errors.messages.indexOf(action.payload)
-                    )]
-            }
+            stop: !prevState.stop
         };
         default: return prevState;
     }

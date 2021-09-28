@@ -34,9 +34,7 @@ const Column = ({
         </div>
         <MessagesContainer>
             <MessagesList 
-              type={type}
               messages={messages} 
-              dispatch={dispatch} 
               color={color}
               />
         </MessagesContainer>
