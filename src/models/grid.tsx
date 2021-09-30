@@ -8,7 +8,7 @@ export interface IMessageItem {
 
 export interface IAction {
     type: string;
-    payload: IMessageItem | any;
+    payload?: IMessageItem | any;
 }
 
 export interface IMessagesState {
@@ -29,12 +29,11 @@ export interface IMessagesState {
         color: COLOR;
         count: number;
         messages: IMessageItem[];
-    }   
+    },
+    stop: boolean;  
 }
 
 export interface IContextValue{
     state: IMessagesState,
     dispatch: Dispatch<IAction>,
 }
-
-export type ContextValue = IContextValue | null

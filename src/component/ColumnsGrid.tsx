@@ -10,11 +10,11 @@ const ColumnsGrid = (): JSX.Element => {
   const { state, dispatch } = UseMessages();
 
   return (
-    <Box sx={{ flexGrow: 1 }} >
+    <Box sx={{ flexGrow: 0 }} >
       <Grid container spacing={2} 
         style={{
           display:"flex",
-          alignItems: "center", 
+          alignItems:"flex-start",
           justifyContent:"center"
           }}>
         <Grid item md={3}>
