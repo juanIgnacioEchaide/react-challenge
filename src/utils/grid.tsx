@@ -1,5 +1,5 @@
 import { IMessagesState, IAction } from "../models/grid";
-import { ACTION, initialMessagesState } from "../utils/constants";
+import { ACTION, TITLE, COLOR } from "../utils/constants";
 import { Message } from "../Api";
 import { Dispatch } from "react-transition-group/node_modules/@types/react";
 
@@ -58,7 +58,25 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
       };
     case ACTION.CLEAR:
       return {
-        ...initialMessagesState,
+        errors: {
+          title: TITLE.ERROR,
+          color: COLOR.ERROR,
+          count: 0,
+          messages: [],
+      },
+      warnings: {
+          title: TITLE.WARNING,
+          color: COLOR.WARNING,
+          count: 0,
+          messages: [],
+      },
+      info: {
+          title: TITLE.INFO,
+          color: COLOR.INFO,
+          count: 0,
+          messages: [],
+      },
+      stop: false,
       };
     case ACTION.STOP:
       return {
