@@ -36,6 +36,7 @@ const Column = ({
             <MessagesList 
               messages={messages} 
               color={color}
+              type={type}
               />
         </MessagesContainer>
     </ColumnContainer>

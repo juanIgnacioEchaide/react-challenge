@@ -5,7 +5,7 @@ import generateMessage, { Message } from "../Api";
 import { dispatchMessages } from "../utils/grid";
 import { MessageContext } from "../context/MessageContext";
 import { Column } from "../component/Column"; 
-import {  TYPE } from "../utils/constants";
+import { TYPE } from "../utils/constants";
 
 export interface IColumnsGridProps {
   stop: boolean;

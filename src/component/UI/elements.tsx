@@ -33,7 +33,7 @@ const MessageCard = styled.div`
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 10px;
-    height: 70px;
+    height: 90px;
     box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 const MessageText = styled.div`
@@ -42,12 +42,16 @@ const MessageText = styled.div`
     padding-right: 5px;
     display: flex;  
 `;
-const ClearButton = styled.p`
-    position:absolute;
+const ClearButton = styled.button`
+    border: none;
+    background: none;
     display: flex;
-    justify-content: flex-start;
-    padding-right: 7px;
-    padding-bottom: 4px;
+    justify-content: flex-end;
+    float:right;
+    position: fixed-bottom;
+    &: hover{
+        color: white;
+    }
 `;
 
 export {
