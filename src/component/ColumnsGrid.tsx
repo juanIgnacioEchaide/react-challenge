@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import generateMessage, { Message } from "../Api";
+import { dispatchMessages } from "../utils/grid";
+import { MessageContext } from "../context/MessageContext";
 import { Column } from "../component/Column"; 
 import {  TYPE } from "../utils/constants";
-import { UseMessages } from "../utils/useMessages";
 
-const ColumnsGrid = (): JSX.Element => {  
+export interface IColumnsGridProps {
+  stop: boolean;
+}
+const ColumnsGrid = ({ stop }:IColumnsGridProps): JSX.Element => {  
 
-  const { state, dispatch } = UseMessages();
+  const { state, dispatch } = useContext(MessageContext);
+
+  useEffect(() => {
+    if(stop){
+      return
+    }
+    generateMessage((message: Message) => {
+      dispatchMessages(message,dispatch)
+    })
+      
+  } ,[stop, dispatch])
 
   return (
     <Box sx={{ flexGrow: 0 }} >

@@ -4,7 +4,10 @@ import { MessageContext } from "../context/MessageContext";
 import { ACTION } from "../utils/constants";
 import { PannelButton } from "./UI/elements";
 
-const ButtonsGrid = (): JSX.Element => {
+export interface IButtonsGridProps {
+  setStop: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const ButtonsGrid = ({ setStop }:IButtonsGridProps): JSX.Element => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { state, dispatch } = useContext(MessageContext);
@@ -20,7 +23,7 @@ const ButtonsGrid = (): JSX.Element => {
     >
       <PannelButton
         onClick={() => {
-          dispatch({ type: ACTION.STOP });
+          setStop(true);
         }}
       >
         STOP

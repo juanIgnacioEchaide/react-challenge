@@ -29,8 +29,7 @@ export interface IMessagesState {
         color: COLOR;
         count: number;
         messages: IMessageItem[];
-    },
-    stop: boolean;  
+    }
 }
 
 export interface IContextValue{
