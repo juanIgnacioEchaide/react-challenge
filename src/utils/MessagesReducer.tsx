@@ -10,7 +10,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           errors: {
             ...prevState.errors,
-            count: prevState.errors.count +=1,
+            count: prevState.errors.count + 1,
             messages: [...prevState.errors.messages, action.payload],
           },
         };
@@ -20,7 +20,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           warnings: {
             ...prevState.warnings,
-            count: prevState.warnings.count +=1,
+            count: prevState.warnings.count + 1,
             messages: [...prevState.warnings.messages, action.payload],
           },
         };
@@ -30,7 +30,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           info: {
             ...prevState.info,
-            count: prevState.info.count +=1,
+            count: prevState.info.count + 1,
             messages: [...prevState.info.messages, action.payload],
           },
         };
@@ -40,7 +40,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           warnings: {
             ...prevState.errors,
-            count: prevState.errors.count -=1,
+            count: prevState.errors.count - 1,  
             messages: [
               ...prevState.errors.messages.filter(
                 (m) => m.id !== action.payload
@@ -54,7 +54,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           warnings: {
             ...prevState.warnings,
-            count: prevState.warnings.count -=1,
+            count: prevState.warnings.count - 1,
             messages: [
               ...prevState.warnings.messages.filter(
                 (m) => m.id !== action.payload
@@ -68,7 +68,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ...prevState,
           info: {
             ...prevState.info,
-            count: prevState.info.count -= 1,
+            count: prevState.info.count - 1,
             messages: [
               ...prevState.info.messages.filter(
                 (m) => m.id !== action.payload

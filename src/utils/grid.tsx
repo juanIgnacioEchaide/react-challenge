@@ -56,6 +56,21 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ],
         },
       };
+
+      case ACTION.DELETE_INFO:
+        return {
+          ...prevState,
+          info: {
+            ...prevState.info,
+            count: prevState.info.count - 1,
+            messages: [
+              ...prevState.info.messages.filter(
+                (m) => m.id !== action.payload
+              ),
+            ],
+          },
+        };
+        
     case ACTION.CLEAR:
       return {
         errors: {

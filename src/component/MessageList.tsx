@@ -21,9 +21,19 @@ const MessagesList = ({ messages, color, type }: IMessagesListProps): JSX.Elemen
   const handleDelete = (id: string) => {
     console.log(type, id)
      switch(type){
-      case TYPE.ERROR : return dispatch({type: ACTION.DELETE_ERROR, payload: id});
-      case TYPE.WARNING : return dispatch({type: ACTION.DELETE_WARNING, payload: id});
-      case TYPE.INFO : return dispatch({type: ACTION.DELETE_INFO, payload: id});
+      case TYPE.ERROR 
+        : return dispatch({
+          type: ACTION.DELETE_ERROR, 
+          payload: id
+        });
+      case TYPE.WARNING 
+        : return dispatch({
+          type: ACTION.DELETE_WARNING, 
+          payload: id});
+      case TYPE.INFO 
+        : return dispatch({
+          type: ACTION.DELETE_INFO, 
+          payload: id});
       default: 
     }
   }

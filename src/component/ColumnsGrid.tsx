@@ -15,6 +15,7 @@ const ColumnsGrid = ({ stop }:IColumnsGridProps): JSX.Element => {
   const { state, dispatch } = useContext(MessageContext);
 
   useEffect(() => {
+      !stop &&
       generateMessage((message: Message) => {
         dispatchMessages(message,dispatch)
       })

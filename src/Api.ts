@@ -25,6 +25,7 @@ const observable = new Observable<Message>(subscriber => {
 });
 
 const subscribe = (callback: (message: Message) => void) => {
+  
   const subscription = observable.subscribe({
     next: callback,
   });
