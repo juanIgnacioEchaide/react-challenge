@@ -19,6 +19,7 @@ const MessagesList = ({ messages, color, type }: IMessagesListProps): JSX.Elemen
   const { dispatch } = useContext(MessageContext);
 
   const handleDelete = (id: string) => {
+    
     console.log(type, id)
      switch(type){
       case TYPE.ERROR 

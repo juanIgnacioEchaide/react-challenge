@@ -14,6 +14,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           messages: [...prevState.errors.messages, action.payload],
         },
       };
+
     case ACTION.ADD_WARNING:
       return {
         ...prevState,
@@ -32,6 +33,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           messages: [...prevState.info.messages, action.payload],
         },
       };
+
     case ACTION.DELETE_ERROR:
       return {
         ...prevState,
@@ -43,6 +45,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
           ],
         },
       };
+
     case ACTION.DELETE_WARNING:
       return {
         ...prevState,
@@ -57,7 +60,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
         },
       };
 
-      case ACTION.DELETE_INFO:
+    case ACTION.DELETE_INFO:
         return {
           ...prevState,
           info: {
@@ -92,6 +95,7 @@ export const MessagesReducer = (prevState: IMessagesState, action: IAction) => {
             messages: [],
         }
       };
+      
     case ACTION.STOP:
       return {
         ...prevState,
